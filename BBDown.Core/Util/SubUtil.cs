@@ -228,7 +228,6 @@ namespace BBDown.Core.Util
                 {
                     var lan = sub.GetProperty("lang_key").ToString();
                     string url;
-                    var url = sub.GetProperty("url").ToString();
                     if (ass.ValueKind != JsonValueKind.Null)
                     {
                         url = ass.GetProperty("url").ToString();
