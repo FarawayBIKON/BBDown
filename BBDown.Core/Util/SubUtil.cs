@@ -227,7 +227,16 @@ namespace BBDown.Core.Util
                 foreach (var sub in subs)
                 {
                     var lan = sub.GetProperty("lang_key").ToString();
+                    string url;
                     var url = sub.GetProperty("url").ToString();
+                    if (ass.ValueKind != JsonValueKind.Null)
+                    {
+                        url = ass.GetProperty("url").ToString();
+                    }
+                    else
+                    {
+                        url = sub.GetProperty("srt").GetProperty("url").ToString();
+                    }
                     Subtitle subtitle = new()
                     {
                         url = url,
